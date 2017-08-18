@@ -15,6 +15,14 @@ public class BlogTests extends BaseTest {
         page.navToSignInPage().signIn("test_user", "testuser@123");
     }
 
+    @Test
+    public void pubslishBlog()
+    {
+        LandingPage page = new LandingPage(driver);
+        page.navToSignInPage().signIn("test_user","testuser@123").
+                createBlog("This is a blog by a test_user").navToPublishBlogPage().publishBLog();
+    }
+
 
 
 }
