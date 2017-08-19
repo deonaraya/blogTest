@@ -13,7 +13,7 @@ public class BaseTest {
 
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"TrivialTests","PublishTests","CommentTests" })
     public void setUp() throws Exception {
         try
         {
@@ -23,16 +23,17 @@ public class BaseTest {
            throw e;
         }
 
+        System.setProperty("webdriver.chrome.driver","src/main/resources/chromedriver");
         driver = new ChromeDriver();
         driver.get("http://ec2-54-90-154-147.compute-1.amazonaws.com/");
         driver.manage().window().maximize();
     }
 
-    @AfterMethod
+    @AfterMethod(groups = {"TrivialTests","PublishTests","CommentTests" })
     public void tearDown()
     {
         driver.close();
-        driver.quit();
+      //  driver.quit();
 
     }
 }
