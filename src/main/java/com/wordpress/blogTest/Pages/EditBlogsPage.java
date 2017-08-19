@@ -31,12 +31,16 @@ public class EditBlogsPage extends BasePage {
     @FindBy(xpath = "//a[text()='View post']")
     private WebElement viewPostLink ;
 
-    public EditBlogsPage publishBLog(){
+    public EditBlogsPage publishBlog(){
         publishBlogButton.click();
         waitForWebElement(updateBlogButon);
         return new EditBlogsPage(driver);
     }
 
+    public BlogdetailsPage viewMyBlog(){
+        viewPostLink.click();
+        return new BlogdetailsPage(driver);
+    }
 
 
 

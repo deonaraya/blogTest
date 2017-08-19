@@ -37,4 +37,11 @@ public class SignInPage extends BasePage {
 
     }
 
+    public LandingPage navToLandingPage()
+    {
+        driver.get("http://ec2-54-90-154-147.compute-1.amazonaws.com/");
+        return new LandingPage(driver);
+
+    }
+
 }
